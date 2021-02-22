@@ -45,6 +45,9 @@ To Do:
 Addenda
 -------
 
+* Due date moved from February 26th to **March 1st.**
+
+
 
 [More](./cs3323-a1.pdf)
 

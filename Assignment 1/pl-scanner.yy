@@ -29,13 +29,10 @@ ALPHA [a-zA-Z]
 %%
 
 
+\/\/.*$    { }
 
-
-
-\/\/.*$   
 [ \t]+						
-[\n]+							
-
+[\n]+				
 
 
 ";"							  { 
@@ -60,10 +57,15 @@ ALPHA [a-zA-Z]
 							  }
 
 <<EOF>>						{ return T_EOF ; }
-.									{ printf ("Unexpected character\n"); exit (1); }
-
-
+.									{ return yytext[0]; }
 
 
 
 %%
+
+int dummy_function(){
+
+  return 1;
+}
+
+

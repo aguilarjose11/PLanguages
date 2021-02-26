@@ -73,6 +73,12 @@ Addenda
 
 * Due date moved from February 26th to **March 1st.**
 
+* Added Input and Output testing data.
+
+* line 60 in pl-scanner.yy update
+
+* Update on driver.cc
+
 
 
 [More](./cs3323-a1.pdf)

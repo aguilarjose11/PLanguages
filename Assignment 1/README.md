@@ -8,19 +8,19 @@ To Do:
 
 1. [ ] (1.5 pts) Recognize programming arithmetic operators. 
   - [ ] 1/2
-    * \+
-    * \-
-    * \*
-    * /
-    * +=
-    * ++
+    * `\+`
+    * `\-`
+    * `\*`
+    * `/`
+    * `+=`
+    * `++`
   - [ ] 2/2
-    * <=
-    * \>=
-    * ==
-    * ~=
-    * <
-    * \>
+    * `<=`
+    * `\>=`
+    * `==`
+    * `~=`
+    * `<`
+    * `\>`
 
 
 2. [ ] (2 pts) Modify T_ID rule to recognize identifiers that follow these rules:

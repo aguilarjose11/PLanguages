@@ -8,8 +8,8 @@ To Do:
 
 1. [ ] (1.5 pts) Recognize programming arithmetic operators. 
   - [ ] 1/2
-    * +
-    * -
+    * \+
+    * \-
     * \*
     * /
     * +=

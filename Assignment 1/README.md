@@ -7,6 +7,21 @@ To Do:
 ------
 
 1. [ ] (1.5 pts) Recognize programming arithmetic operators. 
+  - [ ] 1/2
+    * +
+    * -
+    * \*
+    * /
+    * +=
+    * ++
+  - [ ] 2/2
+    * <=
+    * \>=
+    * ==
+    * ~=
+    * <
+    * \>
+
 
 2. [ ] (2 pts) Modify T_ID rule to recognize identifiers that follow these rules:
 
@@ -22,19 +37,20 @@ To Do:
     - `<Integer>.<Fractional>`
 
 4. [ ] (1.5 pts) Create rules to recognize these keywords and replace with correspontind token from tokens.h (`K_<keyword>`)
-
-  * `integer`
-  * `float`
-  * `foreach`
-  * `begin`
-  * `end`
-  * `repeat`
-  * `until`
-  * `while`
-  * `declare`
-  * `if`
-  * `then`
-  * `print`
+  - [ ] 1/2
+    * `integer`
+    * `float`
+    * `foreach`
+    * `begin`
+    * `end`
+    * `repeat`
+  - [ ] 2/2
+    * `until`
+    * `while`
+    * `declare`
+    * `if`
+    * `then`
+    * `print`
 
 ### Work Distribution
 

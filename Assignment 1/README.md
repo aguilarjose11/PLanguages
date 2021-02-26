@@ -78,4 +78,4 @@ Addenda
 [More](./cs3323-a1.pdf)
 
 
-Jose E. Aguilar Escamilla -- The University of Oklahoma -- Spring 2021.
+CS 3323 -- The University of Oklahoma -- Spring 2021.

@@ -31,8 +31,8 @@ ALPHA [a-zA-Z]
 
 \/\/.*$    { }
 
-[ \t]+						
-[\n]+				
+[ \t]+				{ }
+[\n]+				{ }
 
 
 ";"							  { 
@@ -52,7 +52,7 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 
-{ALPHA}+        { 
+"@"{ALPHA}({ALPHA}|{DIGIT}|_)*       { 
 									return T_ID;
 							  }
 

@@ -31,8 +31,8 @@ ALPHA [a-zA-Z]
 
 \/\/.*$    { }
 
-[ \t]+						
-[\n]+				
+[ \t]+				{ }
+[\n]+				{ }
 
 
 ";"							  { 
@@ -52,14 +52,31 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 
-{ALPHA}+        { 
+"@"{ALPHA}({ALPHA}|{DIGIT}|_)*       { 
 									return T_ID;
 							  }
 
 <<EOF>>						{ return T_EOF ; }
 .									{ return yytext[0]; }
 
-
+"until"							  { 
+										return K_UNTIL; 
+                  }
+"while"							  { 
+										return K_WHILE; 
+                  }
+"declare"							  { 
+										return K_DECLARE; 
+                  }
+"if"							  { 
+										return K_IF; 
+                  }
+"then"							  { 
+										return K_THEN; 
+                  }
+"print"							  { 
+										return K_PRINT; 
+                  }
 
 %%
 

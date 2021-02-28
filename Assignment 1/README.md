@@ -23,7 +23,7 @@ To Do:
     * `\>`
 
 
-2. [ ] (2 pts) Modify T_ID rule to recognize identifiers that follow these rules:
+2. [x] (2 pts) Modify T_ID rule to recognize identifiers that follow these rules:
 
   * First character is `@`.
   * Second character **must** be a letter.
@@ -44,7 +44,7 @@ To Do:
     * `begin`
     * `end`
     * `repeat`
-  - [ ] 2/2
+  - [x] 2/2
     * `until`
     * `while`
     * `declare`

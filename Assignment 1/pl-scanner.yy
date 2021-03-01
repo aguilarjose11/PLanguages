@@ -55,6 +55,10 @@ ALPHA [a-zA-Z]
 "@"{ALPHA}({ALPHA}|{DIGIT}|_)*       { 
 									return T_ID;
 							  }
+							  
+[-+]?[0-9]*\.?[0-9]+       { 
+									return L_FLOAT;
+							  }							
 
 <<EOF>>						{ return T_EOF ; }
 .									{ return yytext[0]; }

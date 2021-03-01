@@ -51,6 +51,47 @@ ALPHA [a-zA-Z]
 {DIGIT}+					{ 
 										return L_INTEGER;
 									}
+									
+"\+"      { 
+									return OP_ADD;
+							  }
+"\-"      { 
+									return OP_SUB;
+							  }
+"\*"       { 
+									return OP_MUL;
+							  }
+"/"       { 
+									return OP_DIV;
+							  }
+"+="      { 
+									return L_FLOAT;
+							  }
+"+="       { 
+									return L_FLOAT;
+							  }
+"++"      { 
+									return OP_PLUSPLUS;
+							  }
+"<="      { 
+									return OP_LEQ;
+							  }
+"\=>"      { 
+									return OP_GEQ;
+							  }
+"=="      { 
+									return OP_EQ;
+							  }
+"~="      { 
+									return OP_DIFF;
+							  }
+"<"      { 
+									return OP_LT;
+							  }
+"\>"      { 
+									return OP_GT;
+							  }
+							  
 
 "@"{ALPHA}({ALPHA}|{DIGIT}|_)*       { 
 									return T_ID;

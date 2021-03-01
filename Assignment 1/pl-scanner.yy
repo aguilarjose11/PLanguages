@@ -52,23 +52,20 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 									
-"\+"      { 
+"+"      { 
 									return OP_ADD;
 							  }
-"\-"      { 
+"-"      { 
 									return OP_SUB;
 							  }
-"\*"       { 
+"*"       { 
 									return OP_MUL;
 							  }
 "/"       { 
 									return OP_DIV;
 							  }
-"+="      { 
-									return L_FLOAT;
-							  }
 "+="       { 
-									return L_FLOAT;
+									return OP_ADDINC;
 							  }
 "++"      { 
 									return OP_PLUSPLUS;
@@ -76,7 +73,7 @@ ALPHA [a-zA-Z]
 "<="      { 
 									return OP_LEQ;
 							  }
-"\=>"      { 
+">="      { 
 									return OP_GEQ;
 							  }
 "=="      { 
@@ -88,7 +85,7 @@ ALPHA [a-zA-Z]
 "<"      { 
 									return OP_LT;
 							  }
-"\>"      { 
+">"      { 
 									return OP_GT;
 							  }
 							  

@@ -1,2 +1,6 @@
 # Ignore compressed files
 *.zip
+
+# Ignore compilation products
+lex.yy.c
+*.exe

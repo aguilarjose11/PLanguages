@@ -59,6 +59,25 @@ ALPHA [a-zA-Z]
 <<EOF>>						{ return T_EOF ; }
 .									{ return yytext[0]; }
 
+"integer"							  { 
+										return K_INTEGER; 
+                  }
+"float"							  { 
+										return K_FLOAT; 
+                  }
+"foreach"							  { 
+										return K_FOREACH; 
+                  }
+"begin"							  { 
+										return K_BEGIN; 
+                  }
+"end"							  { 
+										return K_END; 
+                  }
+"repeat"							  { 
+										return K_REPEAT; 
+                  }
+
 "until"							  { 
 										return K_UNTIL; 
                   }

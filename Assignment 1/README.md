@@ -6,15 +6,15 @@ Assignment 1
 To Do:
 ------
 
-1. [ ] (1.5 pts) Recognize programming arithmetic operators. 
-  - [ ] 1/2
+1. [x] (1.5 pts) Recognize programming arithmetic operators. 
+  - [x] 1/2
     * `\+`
     * `\-`
     * `\*`
     * `/`
     * `+=`
     * `++`
-  - [ ] 2/2
+  - [x] 2/2
     * `<=`
     * `\>=`
     * `==`
@@ -29,15 +29,15 @@ To Do:
   * Second character **must** be a letter.
   * Remaining Characters can be any _case-insensitive_ letter, digit, or underscore symbol.
 
-3. [ ]  (2.5 pts) Recognize floating points using a rule that returns a L_FLOAT token such that:
+3. [x]  (2.5 pts) Recognize floating points using a rule that returns a L_FLOAT token such that:
 
   * Number either has `+` or `-` or neither.
   * Integer and fractional values are separated by `.`.
   * Both integer and fractional values have at least one digit:
     - `<Integer>.<Fractional>`
 
-4. [ ] (1.5 pts) Create rules to recognize these keywords and replace with correspontind token from tokens.h (`K_<keyword>`)
-  - [ ] 1/2
+4. [x] (1.5 pts) Create rules to recognize these keywords and replace with correspontind token from tokens.h (`K_<keyword>`)
+  - [x] 1/2
     * `integer`
     * `float`
     * `foreach`

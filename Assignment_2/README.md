@@ -44,12 +44,12 @@ Assignment To Do
 3. (1.5pt) Define 3 productions for non-terminal **l_fact** (lines 124-126).
 
     1. Left recursive rule
-      * Shall produce comparisons of arithmetic expressions with **a_expr**. 
-      * Shall use **oprel**
+        * Shall produce comparisons of arithmetic expressions with **a_expr**. 
+        * Shall use **oprel**
     2. Single arithmetic expression
-      * **a_expr**
+        * **a_expr**
     3. Logical expression in parenthesis
-      * Using **l_expr**.
+        * Using **l_expr**.
 
 4. (1pt) Define two productions for **varref** non-terminal that match the following:
     * Variable reference can be **T_ID** token.

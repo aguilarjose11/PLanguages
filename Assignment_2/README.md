@@ -38,37 +38,38 @@ Assignment To Do
 ----------------
 
 1. (0.5pt) Complete **varlist** (lines 143-145) non-terminal production. It should produce a comma-separated list of variable references __varref__ where the list should be of _at least_ length one. This production is used by **read** (line 139). 
+
 2. (0.5pt) Complete **expr_list** (lines 147-149) non-terminal production. It shall produce a comma-separated list of arithmetic expressions. see a_expr in lines 95-98 for more on this. The list of arithmetic expressions should be of at least length one.
 
 3. (1.5pt) Define 3 productions for non-terminal **l_fact** (lines 124-126).
 
-  1. Left recursive rule
-    * Shall produce comparisons of arithmetic expressions with **a_expr**. 
-    * Shall use **oprel**
-  2. Single arithmetic expression
-    * **a_expr**
-  3. Logical expression in parenthesis
-    * Using **l_expr**.
+    1. Left recursive rule
+      * Shall produce comparisons of arithmetic expressions with **a_expr**. 
+      * Shall use **oprel**
+    2. Single arithmetic expression
+      * **a_expr**
+    3. Logical expression in parenthesis
+      * Using **l_expr**.
 
 4. (1pt) Define two productions for **varref** non-terminal that match the following:
-  * Variable reference can be **T_ID** token.
-  * Variable reference can be left-recursive list of arithmetic expressions surrounded by \[ \] that terminates with **T_ID**.
+    * Variable reference can be **T_ID** token.
+    * Variable reference can be left-recursive list of arithmetic expressions surrounded by \[ \] that terminates with **T_ID**.
 
 5. (2pt) Define 5 productions for **a_fact** (lines 105-109)
 
-  1. **a_fact** can be **varref** (variable reference)
-  2. Token **T_NUM**
-  3. Literal String **T_LITERAL_STR**
-  4. non-terminal a_fact preceded by **T_SUB** token. Avoid using '-'
-  5. Parenthesized arithmetic expression **a_expr**
+    1. **a_fact** can be **varref** (variable reference)
+    2. Token **T_NUM**
+    3. Literal String **T_LITERAL_STR**
+    4. non-terminal a_fact preceded by **T_SUB** token. Avoid using '-'
+    5. Parenthesized arithmetic expression **a_expr**
 
 6. (2pt) Complete 4 control-flow constructs **l_expr** is to be used for representing logical expressions.
 
-  1. foreach
-    * Complete the production
-  2. repeat-until
-    * Using **stmt_list**, define repeat-until as a list of statements delimited by tokens **T_REPEAT** and **T_UNTIL**. The controlling condition shall use **l_expr**.
-  3. while
-    * **T_WHILE** followed by a logical expression (**l_expr**)
-  4. if-then/if-then-else
-    * **T_IF** token followed by logical expression (**l_expr**). True branch shall be preceded by **T_THEN** token; the  false branch shall be **T_ELSE** followed by a statement or _nothing_.
+    1. foreach
+        * Complete the production
+    2. repeat-until
+        * Using **stmt_list**, define repeat-until as a list of statements delimited by tokens **T_REPEAT** and **T_UNTIL**. The controlling condition shall use **l_expr**.
+    3. while
+        * **T_WHILE** followed by a logical expression (**l_expr**)
+    4. if-then/if-then-else
+        * **T_IF** token followed by logical expression (**l_expr**). True branch shall be preceded by **T_THEN** token; the  false branch shall be **T_ELSE** followed by a statement or _nothing_.

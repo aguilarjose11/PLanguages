@@ -71,3 +71,15 @@ Assignment To Do
         * **T_WHILE** followed by a logical expression (**l_expr**)
     4. if-then/if-then-else
         * **T_IF** token followed by logical expression (**l_expr**). True branch shall be preceded by **T_THEN** token; the  false branch shall be **T_ELSE** followed by a statement or _nothing_.
+
+
+Work Assignment
+---------------
+
+
+Adenda
+------
+
+Nima: 3, 4
+Armon: 2, 6
+Jose: 1, 5

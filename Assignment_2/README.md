@@ -76,10 +76,10 @@ Assignment To Do
 Work Assignment
 ---------------
 
+Nima: 3, 4
+Armon: 2, 6
+Jose: 1, 5
 
 Adenda
 ------
 
-Nima: 3, 4
-Armon: 2, 6
-Jose: 1, 5

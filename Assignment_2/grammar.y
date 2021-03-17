@@ -140,8 +140,8 @@ read : T_READ varlist ;
 
 write: T_WRITE expr_list;
 
-varlist : 
-      | 
+varlist : varref
+      | varref, varref
       ;
 
 expr_list : 

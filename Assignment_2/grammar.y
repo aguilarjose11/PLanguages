@@ -122,7 +122,7 @@ l_term : l_term T_OR l_fact
   ;
 
 l_fact : oprel
-  | a_expr
+  | T_ADD
   | (l_expr)
   ;
 
@@ -144,8 +144,8 @@ varlist : varref
       | varref, varref
       ;
 
-expr_list : 
-  | 
+expr_list : a_expr
+  | a_expr, a_expr
   ;
 
 %%

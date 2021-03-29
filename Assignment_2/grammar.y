@@ -109,7 +109,7 @@ a_fact : varref
     | (a_fact)
     ;
 
-varref : 
+varref : T_ID
   | 
   ;
 
@@ -121,9 +121,9 @@ l_term : l_term T_OR l_fact
   | l_fact
   ;
 
-l_fact : 
-  | 
-  | 
+l_fact : oprel
+  | T_ADD
+  | (l_expr)
   ;
 
 

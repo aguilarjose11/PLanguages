@@ -121,7 +121,7 @@ l_term : l_term T_OR l_fact
   | l_fact
   ;
 
-l_fact : oprel 
+l_fact : oprel
   | T_ADD
   | (l_expr)
   ;

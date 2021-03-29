@@ -110,7 +110,7 @@ a_fact : varref
     ;
 
 varref : T_ID
-  | 
+  | [T_ID]
   ;
 
 l_expr : l_expr T_AND l_term

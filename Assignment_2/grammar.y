@@ -73,7 +73,7 @@ block : T_BEGIN stmt_list T_END
 
 foreach : T_FOREACH 
           T_IN 
-          l_expr 
+          '(' ':' ')' 
           stmt
     ;
 
@@ -88,12 +88,15 @@ repeat : stmt_list
   ;
 
 if_stmt : T_IF
-          l_expr
+          '(' l_expr ')'
           T_THEN
+          stmt
+          else_stmt
   ;
 
 else_stmt : T_ELSE
-  |
+            stmt
+  |         
   ;
 
 assignment : varref T_ASSIGN l_expr ;
@@ -112,11 +115,11 @@ a_fact : varref
     | T_NUM
     | T_LITERAL_STR
     | T_SUB a_fact
-    | (a_fact)
+    | '(' a_fact ')'
     ;
 
 varref : T_ID
-  | [T_ID]
+  | '[' T_ID ']'
   ;
 
 l_expr : l_expr T_AND l_term
@@ -127,9 +130,9 @@ l_term : l_term T_OR l_fact
   | l_fact
   ;
 
-l_fact : oprel
-  | T_ADD
-  | (l_expr)
+l_fact : a_expr oprel a_expr
+  | a_expr
+  | '(' l_expr ')'
   ;
 
 
@@ -147,11 +150,11 @@ read : T_READ varlist ;
 write: T_WRITE expr_list;
 
 varlist : varref
-      | varref, varref
+      | varref',' varref
       ;
 
 expr_list : a_expr
-  | a_expr, a_expr
+  | a_expr',' a_expr
   ;
 
 %%

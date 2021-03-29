@@ -72,19 +72,19 @@ block : T_BEGIN stmt_list T_END
   ;
 
 foreach : T_FOREACH 
-          T_IN 
-          '(' ':' ')' 
-          stmt
+    |   T_IN 
+    |  '(' ':' ')' 
+    | stmt
     ;
 
 while : T_WHILE
-        l_expr
+    | l_expr
     ;
 
 repeat : stmt_list
-         T_REPEAT
-         T_UNTIL
-         l_expr
+   | T_REPEAT
+   | T_UNTIL
+   | l_expr
   ;
 
 if_stmt : T_IF

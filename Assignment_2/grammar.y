@@ -73,20 +73,26 @@ block : T_BEGIN stmt_list T_END
 
 foreach : T_FOREACH 
           T_IN 
-          '(' ':' ')' 
+          l_expr 
           stmt
     ;
 
-while : 
+while : T_WHILE
+        l_expr
     ;
 
-repeat : 
+repeat : stmt_list
+         T_REPEAT
+         T_UNTIL
+         l_expr
   ;
 
-if_stmt : 
+if_stmt : T_IF
+          l_expr
+          T_THEN
   ;
 
-else_stmt : 
+else_stmt : T_ELSE
   |
   ;
 

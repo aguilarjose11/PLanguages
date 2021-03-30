@@ -71,7 +71,7 @@ stmt : assignment
 block : T_BEGIN stmt_list T_END
   ;
 
-foreach : T_FOREACH T_ID T_IN '(' a_expr ':' T_ID ')' 
+foreach : T_FOREACH T_ID T_IN '(' a_expr ':' T_ID ')'  stmt
     ;
 
 while : T_WHILE l_expr
@@ -112,7 +112,7 @@ a_fact : varref
     ;
 
 varref : T_ID
-  | T_ID '[' a_expr ']'
+  | a_expr'[' a_expr ']'
   ;
 
 l_expr : l_expr T_AND l_term

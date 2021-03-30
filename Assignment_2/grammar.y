@@ -88,7 +88,7 @@ if_stmt : T_IF l_expr T_THEN
   ;
 
 else_stmt : T_ELSE
-  | stmt
+  | T_BEGIN stmt_list T_END
   ;
 
 assignment : varref T_ASSIGN l_expr ;

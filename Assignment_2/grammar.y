@@ -74,14 +74,10 @@ block : T_BEGIN stmt_list T_END
 foreach : T_FOREACH T_ID T_IN '(' a_expr ':' T_ID ')' 
     ;
 
-while : T_WHILE
-        l_expr
+while : T_WHILE l_expr
     ;
 
-repeat : stmt_list
-         T_REPEAT
-         T_UNTIL
-         l_expr
+repeat : stmt_list T_REPEAT T_UNTIL l_expr
   ;
 
 if_stmt : T_IF

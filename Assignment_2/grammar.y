@@ -107,7 +107,7 @@ a_fact : varref
     | T_NUM
     | T_LITERAL_STR
     | T_SUB a_fact
-    | (a_fact)
+    | '('a_fact')'
     ;
 
 varref : T_ID

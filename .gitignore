@@ -4,3 +4,6 @@
 # Ignore compilation products
 lex.yy.c
 *.exe
+
+# Ignore final files
+113404245*

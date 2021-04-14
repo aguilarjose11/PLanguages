@@ -120,6 +120,9 @@ a_expr : a_expr T_ADD a_term
         {
           // TASK: Modify this semantic action to support both DTYPE_INT and DTYPE_FLOAT.
           // For DTYPE_FLOAT you should generate an OP_FADD instruction.
+          // Querying function #1
+          res = make_temp (symtab, $1->datatype);
+          itab_instruction_add (itab, OP_FADD, res->addr, $1->addr, $3->addr);
         }
         $$ = res;
         #ifdef _SMP_DEBUG_
@@ -134,12 +137,24 @@ a_expr : a_expr T_ADD a_term
           exit (1);
         }
         // TASK: Complete support for OP_SUB and OP_FSUB. See OP_ADD and OP_FADD code above.
+        // #2
         symbol_t * res;
         if ($1->datatype == DTYPE_INT)
         {
           res = make_temp (symtab, $1->datatype);
           itab_instruction_add (itab, OP_SUB, res->addr, $1->addr, $3->addr);
         }
+
+        // Float OP_FSUB
+        if ($1->datatype == DTYPE_FLOAT)
+        {
+          // TASK: Modify this semantic action to support both DTYPE_INT and DTYPE_FLOAT.
+          // For DTYPE_FLOAT you should generate an OP_FSUB instruction.
+          // Querying function #1
+          res = make_temp (symtab, $1->datatype);
+          itab_instruction_add (itab, OP_FSUB, res->addr, $1->addr, $3->addr);
+        }
+
         $$ = res;
         #ifdef _SMP_DEBUG_
         cout << "On a_expr (2)\n";
@@ -162,11 +177,22 @@ a_term : a_term T_MUL a_fact
           exit (1);
         }
         // TASK: Complete support for OP_MUL and OP_FMUL. See OP_ADD and OP_FADD code above.
+        // #3
         symbol_t * res;
         if ($1->datatype == DTYPE_INT)
         {
           res = make_temp (symtab, $1->datatype);
           itab_instruction_add (itab, OP_MUL, res->addr, $1->addr, $3->addr);
+        }
+
+        // OP_FMUL
+        if ($1->datatype == DTYPE_FLOAT)
+        {
+          // TASK: Modify this semantic action to support both DTYPE_INT and DTYPE_FLOAT.
+          // For DTYPE_FLOAT you should generate an OP_FMUL instruction.
+          // Querying function #3
+          res = make_temp (symtab, $1->datatype);
+          itab_instruction_add (itab, OP_FMUL, res->addr, $1->addr, $3->addr);
         }
         $$ = res;
       }
@@ -178,11 +204,20 @@ a_term : a_term T_MUL a_fact
           exit (1);
         }
         // TASK: Complete support for OP_DIV and OP_FDIV. See OP_ADD and OP_FADD code above.
+        // #4
         symbol_t * res;
         if ($1->datatype == DTYPE_INT)
         {
           res = make_temp (symtab, $1->datatype);
           itab_instruction_add (itab, OP_DIV, res->addr, $1->addr, $3->addr);
+        }
+        if ($1->datatype == DTYPE_FLOAT)
+        {
+          // TASK: Modify this semantic action to support both DTYPE_INT and DTYPE_FLOAT.
+          // For DTYPE_FLOAT you should generate an OP_FDIV instruction.
+          // Querying function #4
+          res = make_temp (symtab, $1->datatype);
+          itab_instruction_add (itab, OP_FDIV, res->addr, $1->addr, $3->addr);
         }
         $$ = res;
         

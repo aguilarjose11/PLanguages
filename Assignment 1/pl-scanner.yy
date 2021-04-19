@@ -1,7 +1,5 @@
 %{ 
-//name, ID; 
-
-#include "tokens.h"
+#include "simple.h"
 # undef yywrap
 # define yywrap() 1
 
@@ -29,121 +27,180 @@ ALPHA [a-zA-Z]
 %%
 
 
-\/\/.*$    { }
-
-[ \t]+				{ }
-[\n]+				{ }
 
 
-";"							  { 
-										return ';'; 
+
+\/\/.*$           { yylloc.last_line++; yylloc.last_column = 0;}	
+[ ]+						  { yylloc.last_column++;}	
+[\t]+						  { yylloc.last_column+=2;}	
+[\n]+						  {yylloc.last_line++; yylloc.last_column = 0;}	
+
+\".+\"						{ 
+                    yylloc.last_column += strlen(yytext);
+										return T_LITERAL_STR; 
+                  }
+
+
+":="							{ 
+                    yylloc.last_column += 2;
+										return T_ASSIGN; 
+                  }
+
+"+"							  { 
+                    yylloc.last_column++;
+										return T_ADD; 
+                  }
+
+"-"							  { 
+                    yylloc.last_column++;
+										return T_SUB; 
+                  }
+
+"*"							  { 
+                    yylloc.last_column++;
+										return T_MUL; 
+                  }
+
+"/"							  { 
+                    yylloc.last_column++;
+										return T_DIV; 
+                  }
+
+"<"							  { 
+                    yylloc.last_column++;
+										return T_LT; 
+                  }
+
+">"							  { 
+                    yylloc.last_column++;
+										return T_GT; 
+                  }
+
+">="							{ 
+                    yylloc.last_column+=2;
+										return T_GEQ; 
+                  }
+
+"<="							{ 
+                    yylloc.last_column+=2;
+										return T_LEQ; 
                   }
 
 "="							  { 
-										return OP_ASSIGN; 
+                    yylloc.last_column+=1;
+										return T_EQ; 
                   }
 
-"main"					{ 
-										return K_MAIN; 
+"<>"							{ 
+                    yylloc.last_column+=2;
+										return T_NEQ; 
                   }
 
+"and"							{ 
+                    yylloc.last_column+=3;
+										return T_AND; 
+                  }
+
+"or"							{ 
+                    yylloc.last_column+=2;
+										return T_OR; 
+                  }
+  
+"foreach"				  { 
+                    yylloc.last_column+=7;
+										return T_FOREACH; 
+                  }
+
+"in"				      { 
+                    yylloc.last_column+=7;
+										return T_IN; 
+                  }
+
+"while"				    { 
+                    yylloc.last_column+=5;
+										return T_WHILE; 
+                  }
+
+"begin"					  { 
+                    yylloc.last_column+=5;
+										return T_BEGIN; 
+                  }
+
+"end"				      { 
+                    yylloc.last_column+=3;
+										return T_END; 
+                  }
+
+"if"				      { 
+                    yylloc.last_column+=2;
+										return T_IF; 
+                  }
+
+"then"				    { 
+                    yylloc.last_column+=4;
+										return T_THEN; 
+                  }
+
+"else"				    { 
+                    yylloc.last_column+=4;
+										return T_ELSE; 
+                  }
+
+"write"						{ 
+                    yylloc.last_column+=5;
+										return T_WRITE; 
+                  }
+
+"read"						{ 
+                    yylloc.last_column+=4;
+										return T_READ; 
+                  }
+
+"int"							{ 
+                    yylloc.last_column+=3;
+										return T_INTEGER; 
+                  }
+
+"float"						{ 
+                    yylloc.last_column+=5;
+										return T_FLOAT; 
+                  }
+
+"repeat"				  { 
+                    yylloc.last_column+=6;
+										return T_REPEAT; 
+                  }
+
+"until"				    { 
+                    yylloc.last_column+=5;
+										return T_UNTIL; 
+                  }
+
+"declare"					{ 
+                    yylloc.last_column+=7;
+										return T_DECLARE; 
+                  }
+
+
+{DIGIT}+[.]{DIGIT}+	{ 
+                      yylloc.last_column += strlen(yytext);
+                      return T_NUM;
+									  }
 
 {DIGIT}+					{ 
-										return L_INTEGER;
+                    yylloc.last_column += strlen(yytext);
+										return T_NUM;
 									}
-									
-"+"      { 
-									return OP_ADD;
-							  }
-"-"      { 
-									return OP_SUB;
-							  }
-"*"       { 
-									return OP_MUL;
-							  }
-"/"       { 
-									return OP_DIV;
-							  }
-"+="       { 
-									return OP_ADDINC;
-							  }
-"++"      { 
-									return OP_PLUSPLUS;
-							  }
-"<="      { 
-									return OP_LEQ;
-							  }
-">="      { 
-									return OP_GEQ;
-							  }
-"=="      { 
-									return OP_EQ;
-							  }
-"~="      { 
-									return OP_DIFF;
-							  }
-"<"      { 
-									return OP_LT;
-							  }
-">"      { 
-									return OP_GT;
-							  }
-							  
 
-"@"{ALPHA}({ALPHA}|{DIGIT}|_)*       { 
-									return T_ID;
-							  }
-							  
-[-+]?[0-9]*\.?[0-9]+       { 
-									return L_FLOAT;
-							  }							
+({ALPHA}|[_])({DIGIT}|{ALPHA}|[_])*     { 
+                                          yylloc.last_column += strlen(yytext);
+																					return T_ID;
+																				}
 
-<<EOF>>						{ return T_EOF ; }
-.									{ return yytext[0]; }
+.									{  yylloc.last_column++; return yytext[0];}
 
-"integer"							  { 
-										return K_INTEGER; 
-                  }
-"float"							  { 
-										return K_FLOAT; 
-                  }
-"foreach"							  { 
-										return K_FOREACH; 
-                  }
-"begin"							  { 
-										return K_BEGIN; 
-                  }
-"end"							  { 
-										return K_END; 
-                  }
-"repeat"							  { 
-										return K_REPEAT; 
-                  }
 
-"until"							  { 
-										return K_UNTIL; 
-                  }
-"while"							  { 
-										return K_WHILE; 
-                  }
-"declare"							  { 
-										return K_DECLARE; 
-                  }
-"if"							  { 
-										return K_IF; 
-                  }
-"then"							  { 
-										return K_THEN; 
-                  }
-"print"							  { 
-										return K_PRINT; 
-                  }
+
+
 
 %%
-
-int dummy_function(){
-
-  return 1;
-}
-
-

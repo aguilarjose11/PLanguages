@@ -16,7 +16,7 @@ To Do
   - Complete `TBD\_ARG` on lines 239, 241, and 264. `itab\_instruction\_add` is super helpful. See arr0\[1-3\] and "bubble-sort" test cases for more information. [Read](./cs3323-SP21-a4.pdf) documentation for more. 
 
 3. `gramar.y`
-  - Implement if-then and if-then-else using 3 semantic actions:
+  - Implement if-then and if-then-else using 3 semantic actions on lines 171-194:
     1. jump to false-branch if condition is false.
     2. generate unconditional jump to skip else-branch and complete jump's destination as by first ation.
     3. set jump address from second action.

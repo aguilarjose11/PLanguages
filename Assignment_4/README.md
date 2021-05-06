@@ -25,7 +25,7 @@ To Do
 
 ### Some extra notes
 
-I found it incredibly useful the slides on P6-ControlFlow.pdf. Take a look at those slides from canvas. Pg. 7 has information about how to use OP_JZ, etc.
+I found it incredibly useful the slides on P6-ControlFlow.pdf. Take a look at those slides from canvas. Pg. 7 has information about how to use OP_JZ, etc. Also, Lecture from April 19, **21**, **23**, 26 are incredibly helpful. He explains very indepth some of the things we have to do here.
 
 
 

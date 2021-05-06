@@ -23,6 +23,12 @@ To Do
   - [Read](./cs3323-SP21-a4.pdf) documentation for more. 
 
 
+### Some extra notes
+
+I found it incredibly useful the slides on P6-ControlFlow.pdf. Take a look at those slides from canvas. Pg. 7 has information about how to use OP_JZ, etc.
+
+
+
 Work Assignments
 -----------------
 

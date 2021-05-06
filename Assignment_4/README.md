@@ -33,4 +33,4 @@ Work Assignments
   - TBD
 
 * Jose
-  - TBD
+  - Problem 3

@@ -261,7 +261,7 @@ assignment : T_ID arr_index T_ASSIGN a_expr
 
         // TASK: Complete the two TBD_ARG in the following call to itab_instruction_add.
         // HINT: See the code corresponding to OP_LOAD_ARRAY_VAL_*
-        itab_instruction_add (itab, opcode, TBD_ARG, $2->addr, TBD_ARG);
+        itab_instruction_add (itab, OP_LOAD, TBD_ARG, $2->addr, TBD_ARG);
       }
       else
       {

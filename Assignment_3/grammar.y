@@ -37,6 +37,8 @@ static int stptr = 0;
 
 extern yy::location loc;
 
+#define _SMP_DEBUG_
+
 }
 
 %token T_EOF 0
@@ -115,12 +117,10 @@ a_expr : a_expr T_ADD a_term
         {
           res = make_temp (symtab, $1->datatype);
           itab_instruction_add (itab, OP_ADD, res->addr, $1->addr, $3->addr);
+
         }
         if ($1->datatype == DTYPE_FLOAT)
         {
-          // TASK: Modify this semantic action to support both DTYPE_INT and DTYPE_FLOAT.
-          // For DTYPE_FLOAT you should generate an OP_FADD instruction.
-          // Querying function #1
           res = make_temp (symtab, $1->datatype);
           itab_instruction_add (itab, OP_FADD, res->addr, $1->addr, $3->addr);
         }
